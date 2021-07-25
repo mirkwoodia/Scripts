@@ -1,0 +1,47 @@
+﻿[PMC Globals]|None||
+[PMC Code v5.4.0]|||1|Window,3,Fast,1,0,Input,1,100,1|1|RSClick()
+Context=None|
+Groups=Start:1
+1|[FunctionStart]|RSClick|1|0|UserFunction|Local| / |||1|
+2|Left Click|Left, , Down|1|0|Click|||||3|
+3|[Pause]||1|95|Sleep|||||4|
+4|Left Click|Left, , Up|1|0|Click|||||5|
+
+[PMC Code v5.4.0]|||0|Window,3,Fast,1,0,Input,1,100,1|1|Macro3
+Context=None|
+Groups=Start:1
+1|ClickIron|_null := |1|0|Function|||||1|
+2|[Pause]||1|930|Sleep|||||2|
+3|DropIron|_null := |1|0|Function|||||3|
+4|[Pause]||1|25|Sleep|||||4|
+
+[PMC Code v5.4.0]|||1|Window,3,Fast,1,0,Input,1,100,1|1|DropIron()
+Context=None|
+Groups=Start:1
+1|[FunctionStart]|DropIron|1|0|UserFunction|Local| / |||1|
+2|Continue, Break, FoundX, FoundY|2988, 1408, 3392, 1595, 0x372219, 0, Fast RGB|1|0|PixelSearch||Window|||3|
+3|If Image/Pixel Found||1|0|If_Statement|||||7|
+4|Move|%FoundX%, %FoundY%, 0|1|0|Click|||||9|
+5|[Pause]||1|25|Sleep|||||10|
+6|LShift Down|{LShift Down}|1|0|Send|||||11|
+7|[Pause]||1|25|Sleep|||||12|
+8|RSClick|_null := |1|0|Function|||||13|
+9|[Pause]||1|25|Sleep|||||14|
+10|LShift Up|{LShift Up}|1|0|Send|||||15|
+11|[Pause]||1|25|Sleep|||||16|
+12|[End If]|EndIf|1|0|If_Statement|||||17|
+13|Continue, Break, FoundX, FoundY|2988, 1408, 3392, 1595, 0x372219, 0, Fast RGB|1|0|PixelSearch||Window|||18|
+14|If Image/Pixel Found||1|0|If_Statement|||||22|
+15|DropIron|_null := |1|0|Function|||||24|
+16|[End If]|EndIf|1|0|If_Statement|||||25|
+
+[PMC Code v5.4.0]|||1|Window,3,Fast,1,0,Input,1,100,1|1|ClickIron()
+Context=None|
+Groups=Start:1
+1|[FunctionStart]|ClickIron|1|0|UserFunction|Local| / |||1|
+2|Continue, Break, FoundX, FoundY|1309, 708, 2091, 1230, 0x3E271D, 0, Fast RGB|1|0|PixelSearch|UntilFound|Client|||3|
+3|Move|%FoundX%, %FoundY%, 0|1|0|Click|||||11|
+4|[Pause]||1|25|Sleep|||||12|
+5|RSClick|_null := |1|0|Function|||||13|
+6|[Pause]||1|25|Sleep|||||14|
+
